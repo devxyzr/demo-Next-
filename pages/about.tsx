@@ -2,8 +2,9 @@ import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
-import Navbar from '../components/Navbar';
+
 import { MainLayout } from '../components/layouts/MainLayout';
+import { DarkLayout } from '../components/layouts/DarkLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,19 +15,27 @@ const inter = Inter({ subsets: ['latin'] });
 // El nombre del archivo es el nombre del path
 // Rutas implicitas basadas en file sistems
 
-export default function HomePage() {
+export default function AboutPage() {
   return (
-    <MainLayout>
+    <>
       <div className={styles.description}>
-        <h1>Home Page</h1>
+        <h1>About Page</h1>
         <h1>
-          Ir a <Link href="/about"> About</Link>
+          Ir a <Link href="/">Home</Link>
         </h1>
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>pages/index.tsx</code>
         </p>
       </div>
-    </MainLayout>
+    </>
   );
 }
+
+AboutPage.getLayout = function getLayout(page) {
+  return (
+    <MainLayout>
+      <DarkLayout>{page}</DarkLayout>
+    </MainLayout>
+  );
+};

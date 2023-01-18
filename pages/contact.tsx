@@ -14,13 +14,13 @@ const inter = Inter({ subsets: ['latin'] });
 // El nombre del archivo es el nombre del path
 // Rutas implicitas basadas en file sistems
 
-export default function HomePage() {
+export default function ContactPage() {
   return (
     <MainLayout>
       <div className={styles.description}>
-        <h1>Home Page</h1>
+        <h1>Contact Page</h1>
         <h1>
-          Ir a <Link href="/about"> About</Link>
+          Ir a <Link href="/">Home</Link>
         </h1>
         <p>
           Get started by editing&nbsp;
